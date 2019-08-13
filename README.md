@@ -1,2 +1,2 @@
-# Planet_X_Unreal_Engine_Game
+# Planet_X
 This is the beginning of my game project for SDV602.
