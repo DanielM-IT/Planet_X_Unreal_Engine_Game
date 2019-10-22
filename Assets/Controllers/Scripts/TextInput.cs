@@ -7,9 +7,14 @@ public class TextInput : MonoBehaviour
     InputField input;
     InputField.SubmitEvent submitEvent;
     public Text output;
+    public GameObject displayElement;
+    public GameObject inputField;
+
 
     void Start()
     {
+        displayElement.gameObject.SetActive(false);
+
         // Gets the InputField component.
         input = GetComponent<InputField>();
 
@@ -20,20 +25,8 @@ public class TextInput : MonoBehaviour
             submitEvent = new InputField.SubmitEvent();
             submitEvent.AddListener(SubmitInput);
             input.onEndEdit = submitEvent;
-
-            // Displays the first dialog from the game model on first scene load.
-            if (GameManager._gameManager.currentActiveScene() == "ObjectivesScene")
-            {
-                output.text = GameManager._gameManager._storyManager.currentScene.story;
-            }
-            else if (GameManager._gameManager.currentActiveScene() == "ForestScene")
-            {
-                output.text = GameManager._gameManager._storyManager.currentScene.story;
-            }
-            else if (GameManager._gameManager.currentActiveScene() == "CaveEntranceScene")
-            {
-                output.text = GameManager._gameManager._storyManager.currentScene.story;
-            }
+            output.text = GameManager._gameManager._storyManager.currentScene.story;
+            
         }
     }
 
@@ -48,6 +41,14 @@ public class TextInput : MonoBehaviour
 
         // Clears all text from the input field
         input.text = null;
+
+        // Will activate or deactivate specific UI elements if certain keywords are inputted.
+        if (submittedInput.Equals("west") || submittedInput.Equals("east") || submittedInput.Equals("north"))
+        {
+            displayElement.gameObject.SetActive(true);
+            inputField.gameObject.SetActive(false);
+        }
+
     }
 
     // Adds the entered text to the debug log for debugging purposes.

@@ -5,13 +5,7 @@ public class Command : MonoBehaviour
 {
     //public static Command commands;
     private string response;
-    public Button enterForestButton;
 
-    private void Start()
-    {
-        // Future implementation
-        //enterForestButton.gameObject.SetActive(false);
-    }
 
     public Command(string paramResponse)
     {
@@ -81,9 +75,9 @@ public class Command : MonoBehaviour
                     if (currentScene != null)
                         GameManager._gameManager._storyManager.currentScene = currentScene.ClueDialogTwo;
                     break;
-
             }
         }
+        
         else if (activeScene == "CaveEntranceScene")
         {
             switch (response)
