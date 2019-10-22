@@ -21,47 +21,48 @@ public class Command : MonoBehaviour
 
     public void Execute()
     {
+        // Runs the user command and will decide on th ethe response according to both the current Unity scene and the key word used.
+        Scene currentScene = GameManager._gameManager._storyManager.currentScene;
+        string activeScene = GameManager._gameManager.currentActiveScene();
 
-        Scene currentScene = GameManager.gameManager.gameModel.currentScene;
-        string activeScene = GameManager.gameManager.currentActiveScene();
         if (activeScene == "ObjectivesScene")
         {
             switch (response)
             {
                 case "next":
-                    currentScene = GameManager.gameManager.gameModel.currentScene;
+                    currentScene = GameManager._gameManager._storyManager.currentScene;
                     if (currentScene != null)
-                        GameManager.gameManager.gameModel.currentScene = currentScene.CommanderFirstDialog;
+                        GameManager._gameManager._storyManager.currentScene = currentScene.CommanderFirstDialog;
                     break;
 
                 case "yes":
-                    currentScene = GameManager.gameManager.gameModel.currentScene;
+                    currentScene = GameManager._gameManager._storyManager.currentScene;
                     if (currentScene != null)
-                        GameManager.gameManager.gameModel.currentScene = currentScene.CommanderSecondDialog;
+                        GameManager._gameManager._storyManager.currentScene = currentScene.CommanderSecondDialog;
                     break;
 
                 case "continue":
-                    currentScene = GameManager.gameManager.gameModel.currentScene;
+                    currentScene = GameManager._gameManager._storyManager.currentScene;
                     if (currentScene != null)
-                        GameManager.gameManager.gameModel.currentScene = currentScene.CommanderThirdDialog;
+                        GameManager._gameManager._storyManager.currentScene = currentScene.CommanderThirdDialog;
                     break;
 
                 case "north":
-                    currentScene = GameManager.gameManager.gameModel.currentScene;
+                    currentScene = GameManager._gameManager._storyManager.currentScene;
                     if (currentScene != null)
-                        GameManager.gameManager.gameModel.currentScene = currentScene.CommanderFourthDialog;
+                        GameManager._gameManager._storyManager.currentScene = currentScene.CommanderFourthDialog;
                     break;
 
                 case "east":
-                    currentScene = GameManager.gameManager.gameModel.currentScene;
+                    currentScene = GameManager._gameManager._storyManager.currentScene;
                     if (currentScene != null)
-                        GameManager.gameManager.gameModel.currentScene = currentScene.CommanderFourthDialog;
+                        GameManager._gameManager._storyManager.currentScene = currentScene.CommanderFourthDialog;
                     break;
 
                 case "west":
-                    currentScene = GameManager.gameManager.gameModel.currentScene;
+                    currentScene = GameManager._gameManager._storyManager.currentScene;
                     if (currentScene != null)
-                        GameManager.gameManager.gameModel.currentScene = currentScene.CommanderFourthDialog;
+                        GameManager._gameManager._storyManager.currentScene = currentScene.CommanderFourthDialog;
                     break;
             }
         }
@@ -70,15 +71,15 @@ public class Command : MonoBehaviour
             switch (response)
             {
                 case "continue":
-                    currentScene = GameManager.gameManager.gameModel.currentScene;
+                    currentScene = GameManager._gameManager._storyManager.currentScene;
                     if (currentScene != null)
-                        GameManager.gameManager.gameModel.currentScene = currentScene.ClueDialog;
+                        GameManager._gameManager._storyManager.currentScene = currentScene.ClueDialog;
                     break;
 
                 case "yes":
-                    currentScene = GameManager.gameManager.gameModel.currentScene;
+                    currentScene = GameManager._gameManager._storyManager.currentScene;
                     if (currentScene != null)
-                        GameManager.gameManager.gameModel.currentScene = currentScene.ClueDialogTwo;
+                        GameManager._gameManager._storyManager.currentScene = currentScene.ClueDialogTwo;
                     break;
 
             }
@@ -88,27 +89,27 @@ public class Command : MonoBehaviour
             switch (response)
             {
                 case "yes":
-                    currentScene = GameManager.gameManager.gameModel.currentScene;
+                    currentScene = GameManager._gameManager._storyManager.currentScene;
                     if (currentScene != null)
-                        GameManager.gameManager.gameModel.currentScene = currentScene.BagExamination;
+                        GameManager._gameManager._storyManager.currentScene = currentScene.BagExamination;
                     break;
 
                 case "no":
-                    currentScene = GameManager.gameManager.gameModel.currentScene;
+                    currentScene = GameManager._gameManager._storyManager.currentScene;
                     if (currentScene != null)
-                        GameManager.gameManager.gameModel.currentScene = currentScene.CaveEntrance;
+                        GameManager._gameManager._storyManager.currentScene = currentScene.CaveEntrance;
                     break;
 
                 case "examine":
-                    currentScene = GameManager.gameManager.gameModel.currentScene;
+                    currentScene = GameManager._gameManager._storyManager.currentScene;
                     if (currentScene != null)
-                        GameManager.gameManager.gameModel.currentScene = currentScene.CaveEntrance;
+                        GameManager._gameManager._storyManager.currentScene = currentScene.CaveEntrance;
                     break;
 
                 case "sure":
-                    currentScene = GameManager.gameManager.gameModel.currentScene;
+                    currentScene = GameManager._gameManager._storyManager.currentScene;
                     if (currentScene != null)
-                        GameManager.gameManager.gameModel.currentScene = currentScene.EnteringCave;
+                        GameManager._gameManager._storyManager.currentScene = currentScene.EnteringCave;
                     break;
 
             }

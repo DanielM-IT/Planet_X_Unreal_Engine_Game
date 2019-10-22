@@ -1,9 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    // Gets the animator and rigidbody game objects and creates a variable for each to store each user command in so it can be sent to and used by the came object.
     Animator survivalCharacter;
     Rigidbody characterRB;
 
@@ -35,9 +34,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-
-
-        // Move character forward
+        // Move and face character forward
         if (Input.GetKey(KeyCode.UpArrow))
         {
             characterRB.AddForce(new Vector3(0, 0, -8), ForceMode.VelocityChange);
@@ -45,14 +42,14 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        // Move character backward
+        // Move and face character backward
         if (Input.GetKey(KeyCode.DownArrow))
         {
             characterRB.AddForce(new Vector3(0, 0, 8), ForceMode.VelocityChange);
             characterRB.rotation = Quaternion.LookRotation(Vector3.forward);
         }
 
-        // Move character left
+        // Move and face character left
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             characterRB.AddForce(new Vector3(8, 0, 0), ForceMode.VelocityChange);
@@ -60,7 +57,7 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        // Move character right
+        // Move and face character right
         if (Input.GetKey(KeyCode.RightArrow))
         {
             characterRB.AddForce(new Vector3(-8, 0, 0), ForceMode.VelocityChange);

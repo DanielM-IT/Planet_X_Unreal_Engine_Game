@@ -16,6 +16,7 @@ public class SceneController : MonoBehaviour
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    // Used to load a new scene. The intention for this methos is to be attached to a button.
     public void buttonChangeOfScene()
     {
         SceneManager.LoadScene(sceneName);

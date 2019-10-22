@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/CaveEntranceScene.unity
+- path: Assets/Scenes/ObjectivesScene.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

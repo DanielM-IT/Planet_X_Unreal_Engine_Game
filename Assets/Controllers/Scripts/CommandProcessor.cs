@@ -1,5 +1,4 @@
-﻿using UnityEngine;
-
+﻿// This parses all input entered by the user. It checks first that something was entered then runs it through my command map.
 public class CommandProcessor
 {
     public string ParseInput(string paramInputCommand)

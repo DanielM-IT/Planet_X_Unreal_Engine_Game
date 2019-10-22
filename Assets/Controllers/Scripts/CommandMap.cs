@@ -1,12 +1,13 @@
-﻿using UnityEngine;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 public class CommandMap 
 {
     private Dictionary<string, Command> dictionaryOfCommands;
 
+    // Variable with an empty string. Used in a further down method to clear the story variable.
     public string result = string.Empty;
 
+    // Dictionary of recognized words. 
     public CommandMap()
     {
         dictionaryOfCommands = new Dictionary<string, Command>();
@@ -21,7 +22,7 @@ public class CommandMap
         dictionaryOfCommands.Add("west", new Command("west"));
     }
 
-
+    // Checks to see if the user input is in the dictionary of recognised key words. If it is it will run the command through the command class.
     public bool executeCommand(string paramInputCommandString)
     {
         Command command;
@@ -30,7 +31,7 @@ public class CommandMap
         {
             command = dictionaryOfCommands[paramInputCommandString];
             command.Execute();
-            result = GameManager.gameManager.gameModel.currentScene.story;
+            result = GameManager._gameManager._storyManager.currentScene.story;
             return true;
         }
         return false;

@@ -1,22 +1,23 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class UIController : MonoBehaviour
 {
+    // Creates a public instance of these objects visible on Unity. The desired object is then drop into each slot.
     public GameObject inputField;
     public GameObject outputField;
     public GameObject hintText;
 
+    // Variable to store click counts
     private int counter;
 
-
+    // Sets the fields to be disabled initially
     private void Start()
     {
         inputField.gameObject.SetActive(false);
         outputField.gameObject.SetActive(false);
     }
 
+    // Checks the click number and sets or disables the objects accordingly.
     public void showHideByButton()
     {
         counter++;
@@ -32,6 +33,7 @@ public class UIController : MonoBehaviour
         }
     }
 
+    // Enables and disable objects when the collider of an object this script is attached to is triggered.
     private void OnTriggerEnter(Collider other)
     {
         inputField.gameObject.SetActive(true);
