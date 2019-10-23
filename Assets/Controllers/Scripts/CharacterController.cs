@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class CharacterController : MonoBehaviour
 {
     // Gets the animator and rigidbody game objects and creates a variable for each to store each user command in so it can be sent to and used by the came object.
     Animator survivalCharacter;

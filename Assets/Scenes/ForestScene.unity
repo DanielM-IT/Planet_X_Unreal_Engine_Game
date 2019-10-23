@@ -2572,6 +2572,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82c555033ed4a0444b53c957e1c7139d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
+  userName: {fileID: 0}
+  password: {fileID: 0}
+  promptMessage: {fileID: 0}
 --- !u!4 &904426808
 Transform:
   m_ObjectHideFlags: 0
@@ -4481,18 +4485,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.2755692, y: 0.5479981, z: 0.22570801}
   m_Center: {x: 0.015679194, y: 0.2553711, z: 0.0009765625}
---- !u!114 &1896166599
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1896166597}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0c666a30f734e445a6a30a302d16072, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &1896166600
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4509,6 +4501,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &1896166602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896166597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9a03ddf5fc659d43972d5aeb7b71146, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1923276658
 GameObject:
   m_ObjectHideFlags: 0
@@ -4931,3 +4935,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   output: {fileID: 244122098}
+  displayElement: {fileID: 0}
+  inputField: {fileID: 0}

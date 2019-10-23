@@ -62,11 +62,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Controllers\Scripts\CharacterController.cs" />
     <Compile Include="Assets\Controllers\Scripts\Command.cs" />
     <Compile Include="Assets\Controllers\Scripts\CommandMap.cs" />
     <Compile Include="Assets\Controllers\Scripts\CommandProcessor.cs" />
+    <Compile Include="Assets\Controllers\Scripts\Dialogue.cs" />
     <Compile Include="Assets\Controllers\Scripts\GameManager.cs" />
-    <Compile Include="Assets\Controllers\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Controllers\Scripts\NewBehaviourScript.cs" />
+    <Compile Include="Assets\Controllers\Scripts\Player.cs" />
+    <Compile Include="Assets\Controllers\Scripts\PlayerManager.cs" />
     <Compile Include="Assets\Controllers\Scripts\Scene.cs" />
     <Compile Include="Assets\Controllers\Scripts\SceneController.cs" />
     <Compile Include="Assets\Controllers\Scripts\SQLite\DataService.cs" />

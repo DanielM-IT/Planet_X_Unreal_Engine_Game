@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 
@@ -8,12 +9,25 @@ public class GameManager : MonoBehaviour
     public static GameManager _gameManager;
 
     // This creates a new instance of the gameModel script
-    public StoryManager _storyManager;
-    
-    // To know if the game has started or not
-    private bool _gameStarted;
+    public static StoryManager _storyManager;
+    public static PlayerManager _playerManager;
 
-        /* This method is a one off use for the entire time the instance of this script exists.
+    public Text userName;
+    public Text password;
+    public Text promptMessage;
+
+
+    public static StoryManager Story
+    {
+        get { return _storyManager; }
+    }
+
+    public static PlayerManager PlayerManager
+    {
+        get { return _playerManager; }
+    }
+
+    /* This method is a one off use for the entire time the instance of this script exists.
     It is used to initialize game states and variables while the game is initializing.
     */
     private void Awake()
@@ -21,8 +35,8 @@ public class GameManager : MonoBehaviour
         if (_gameManager == null)
         {
             _gameManager = this;
-            _gameStarted = true;
             _storyManager = new StoryManager();
+            _playerManager = new PlayerManager();
 
         }
         // If a scene exists when it shouldn't it will be destroyed.
@@ -37,4 +51,34 @@ public class GameManager : MonoBehaviour
     {
         return SceneManager.GetActiveScene().name;
     }
+
+    public void CheckUserDetails()
+    {
+        CheckDetails(userName.text, password.text);
+    }
+
+    public void CheckDetails(string pUserName, string pPassword)
+    {
+        if (PlayerManager.LogIn(pUserName, pPassword))
+        {
+            // show scene
+        }
+        else
+        {
+            if (PlayerManager.PlayerExists(pUserName))
+            {
+                promptMessage.text = "Please enter a valid password";
+            }
+            else
+            {
+                PlayerManager.RegisterPlayer(pUserName, pPassword);
+                if (PlayerManager.LoggedIn)
+                {
+                    // show scene
+                }
+            }
+        }
+    }
+
+
 }
