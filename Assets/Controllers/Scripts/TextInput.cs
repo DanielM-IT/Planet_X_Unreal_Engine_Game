@@ -25,7 +25,7 @@ public class TextInput : MonoBehaviour
             submitEvent = new InputField.SubmitEvent();
             submitEvent.AddListener(SubmitInput);
             input.onEndEdit = submitEvent;
-            output.text = GameManager._gameManager._storyManager.currentScene.story;
+            //output.text = GameManager._gameManager._storyManager.currentScene.story;
             
         }
     }

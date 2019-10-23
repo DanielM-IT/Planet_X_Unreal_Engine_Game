@@ -138,83 +138,13 @@ public class DataService
      * 
      * 
      */
-    public void InsertScenes(SceneSpec SceneSpec)
-    {
-
-
-    }
     /*
      * Not happy with this ... because,  "why is this not generic?"
      */
     public int DialogueCount()
     {
-        int result = Connection.Table<Story>().ToList<Story>().Count;
+        int result = Connection.Table<Story>().ToList().Count;
         return result;
 
-    }
-
-    /*
-     * The example
-     * 
-     * ================================================================================================================================
-     */
-    public void CreateDB()
-    {
-        Connection.DropTable<Person>();
-        Connection.CreateTable<Person>();
-
-        Connection.InsertAll(new[]{
-            new Person{
-                Id = 1,
-                Name = "Tom",
-                Surname = "Perez",
-                Age = 56
-            },
-            new Person{
-                Id = 2,
-                Name = "Fred",
-                Surname = "Arthurson",
-                Age = 16
-            },
-            new Person{
-                Id = 3,
-                Name = "John",
-                Surname = "Doe",
-                Age = 25
-            },
-            new Person{
-                Id = 4,
-                Name = "Roberto",
-                Surname = "Huertas",
-                Age = 37
-            }
-        });
-
-    }
-    public IEnumerable<Person> GetPersons()
-    {
-        return Connection.Table<Person>();
-    }
-
-    public IEnumerable<Person> GetPersonsNamedRoberto()
-    {
-        return Connection.Table<Person>().Where(x => x.Name == "Roberto");
-    }
-
-    public Person GetJohnny()
-    {
-        return Connection.Table<Person>().Where(x => x.Name == "Johnny").FirstOrDefault();
-    }
-
-    public Person CreatePerson()
-    {
-        var p = new Person
-        {
-            Name = "Johnny",
-            Surname = "Mnemonic",
-            Age = 21
-        };
-        Connection.Insert(p);
-        return p;
     }
 }

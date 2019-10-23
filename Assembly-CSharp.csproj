@@ -75,6 +75,7 @@
     <Compile Include="Assets\Controllers\Scripts\SceneController.cs" />
     <Compile Include="Assets\Controllers\Scripts\SQLite\DataService.cs" />
     <Compile Include="Assets\Controllers\Scripts\SQLite\SQLite.cs" />
+    <Compile Include="Assets\Controllers\Scripts\Story.cs" />
     <Compile Include="Assets\Controllers\Scripts\StoryManager.cs" />
     <Compile Include="Assets\Controllers\Scripts\TextInput.cs" />
     <Compile Include="Assets\Controllers\Scripts\UIController.cs" />

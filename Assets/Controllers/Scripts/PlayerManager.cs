@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class PlayerManager
 {
-    private DataService DB = (GameManager.Story != null) ? GameManager.Story.Db : new DataService("GameData.db");
+    private DataService DB = (GameManager.Story != null) ? GameManager.Story.DB : new DataService("GameData.db");
     public bool LoggedIn = false;
     private Player _currentPlayer;
     private int _logInAttempts = 0;
@@ -48,7 +48,7 @@ public class PlayerManager
             {
                 UserName = pUserName,
                 Password = pPassword,
-                CurrentScene = GameManager.Story.FirstScene.AccountId
+                CurrentScene = GameManager.Story.FirstDialogue.DialogueId
             };
 
             DB.Connection.Insert(newPlayer);
