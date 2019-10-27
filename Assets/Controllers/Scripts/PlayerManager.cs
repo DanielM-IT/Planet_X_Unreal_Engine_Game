@@ -75,6 +75,7 @@ public class PlayerManager
         else
         {
             _logInAttempts = 0;
+            GameManager.gameManager.username = pUserName;
         }
 
         LoggedIn = result;
@@ -89,5 +90,15 @@ public class PlayerManager
                    ).ToList<Player>().FirstOrDefault<Player>();
 
         GameManager.gameManager.currentScene = currentSection.CurrentStorySection;
+    }
+
+    public void updatePlayerCurrentScene()
+    {
+        Db.Connection.Execute("UPDATE Player SET CurrentStorySection = ? Where PlayerName = ?", GameManager.gameManager.currentScene, GameManager.gameManager.username);
+    }
+
+    public void updatePlayerXpPoints()
+    {
+        Db.Connection.Execute("UPDATE Player SET PlayerXP = ? Where PlayerName = ?", GameManager.gameManager.currentXpPoints, GameManager.gameManager.username);
     }
 }

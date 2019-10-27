@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     // This creates a new instance of the gameModel script
     public static GameModel gameModel;
 
+    public int currentXpPoints;
     public string username;
     public string currentScene;
     public string currentDialogue;

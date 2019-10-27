@@ -11,11 +11,8 @@ public class SceneController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // Can load scenes by name
+        updatePlayerCurrentStorySection();
         SceneManager.LoadScene(sceneName);
-        
-        // If I wanted to restart the scene instead
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     // Used to load a new scene. The intention for this methos is to be attached to a button.
@@ -32,21 +29,19 @@ public class SceneController : MonoBehaviour
 
     public void updatePlayerCurrentStorySection()
     {
-        if (GameManager.gameManager.currentActiveScene() == "Login")
-        {
-            GameManager.gameManager.currentScene = "ObjectivesScene";
-
-        }
-        else if (GameManager.gameManager.currentActiveScene() == "ObjectivesScene")
+        if (GameManager.gameManager.currentActiveScene() == "ObjectivesScene")
         {
             GameManager.gameManager.currentScene = "ForestScene";
-
+            GameModel.PlayerManager.updatePlayerCurrentScene();
         }
         else if (GameManager.gameManager.currentActiveScene() == "ForestScene")
         {
             GameManager.gameManager.currentScene = "CaveEntranceScene";
-
+            GameModel.PlayerManager.updatePlayerCurrentScene();
         }
-
+        else
+        {
+            GameManager.gameManager.currentScene = "ForestScene";
+        }
     }
 }
