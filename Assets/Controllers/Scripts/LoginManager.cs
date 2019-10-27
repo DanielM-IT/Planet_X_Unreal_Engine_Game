@@ -29,7 +29,7 @@ public class LoginManager : MonoBehaviour
             }
             else if (GameModel.PlayerManager.PlayerExists(pUserName))
             {
-                PromptText.text = "Please enter a valid password.";
+                PromptText.text = "Password is incorrect.";
             }
             else
             {
@@ -40,10 +40,10 @@ public class LoginManager : MonoBehaviour
 
     public void registrationHandler()
     {
-        registrationHandler(UserName.text, Password.text);
+        registrationHandler(UserName.text, Password.text, "ObjectivesScene");
     }
 
-    public void registrationHandler(string pUserName, string pPassword)
+    public void registrationHandler(string pUserName, string pPassword, string pCurrentScene)
     {
         if (string.IsNullOrWhiteSpace(UserName.text) || string.IsNullOrWhiteSpace(Password.text))
         {
@@ -51,7 +51,7 @@ public class LoginManager : MonoBehaviour
         }
         else
         {
-            if (GameModel.PlayerManager.RegisterPlayer(pUserName, pPassword))
+            if (GameModel.PlayerManager.RegisterPlayer(pUserName, pPassword, pCurrentScene))
             {
                 GameManager.gameManager.username = UserName.text;
                 PromptText.text = "New log in successfully created.";

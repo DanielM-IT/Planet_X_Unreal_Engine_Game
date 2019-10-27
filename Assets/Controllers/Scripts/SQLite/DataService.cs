@@ -91,9 +91,9 @@ public class DataService
         {
             _connection.Insert(Record);
         }
-        catch(Exception Exception )
+        catch(Exception)
         {
-            Debug.Log(Exception.InnerException.Message);
+
         }
     }
 

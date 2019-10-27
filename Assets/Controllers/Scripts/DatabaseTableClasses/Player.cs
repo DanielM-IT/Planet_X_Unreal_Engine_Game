@@ -6,7 +6,7 @@ public class Player
     public int PlayerId { get; set; }
     public string PlayerName { get; set; }
     public string PlayerPassword { get; set; }
-    public int CurrentDialogue { get; set; }
+    public string CurrentStorySection { get; set; }
     public int PlayerXP { get; set; }
 
 }

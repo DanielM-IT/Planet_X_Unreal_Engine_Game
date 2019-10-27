@@ -5,13 +5,7 @@ public class Command : MonoBehaviour
 {
     //public static Command commands;
     private string response;
-    public Button enterForestButton;
 
-    private void Start()
-    {
-        // Future implementation
-        //enterForestButton.gameObject.SetActive(false);
-    }
 
     public Command(string paramResponse)
     {
@@ -21,99 +15,86 @@ public class Command : MonoBehaviour
 
     public void Execute()
     {
-        // Runs the user command and will decide on th ethe response according to both the current Unity scene and the key word used.
-        //Scene currentScene = GameManager.gameManager.gameModel.currentScene;
-        //string activeScene = GameManager.gameManager.currentActiveScene();
+       // Runs the user command and will decide on th ethe response according to both the current Unity scene and the key word used.
+        string activeScene = GameManager.gameManager.currentActiveScene();
 
-        //if (activeScene == "ObjectivesScene")
-        //{
-        //    switch (response)
-        //    {
-        //        case "next":
-        //            currentScene = GameManager.gameManager.gameModel.currentScene;
-        //            if (currentScene != null)
-        //                GameManager.gameManager.gameModel.currentScene = currentScene.CommanderFirstDialog;
-        //            break;
+        if (activeScene == "ObjectivesScene")
+        {
+            switch (response)
+            {
+                case "next":
+                    GameManager.gameManager.currentDialogueName = "ObjectiveDialogueTwo";
+                    GameModel.StoryManager.getDialogue();
+                    break;
 
-        //        case "yes":
-        //            currentScene = GameManager.gameManager.gameModel.currentScene;
-        //            if (currentScene != null)
-        //                GameManager.gameManager.gameModel.currentScene = currentScene.CommanderSecondDialog;
-        //            break;
+                case "yes":
+                    GameManager.gameManager.currentDialogueName = "ObjectiveDialogueThree";
+                    GameModel.StoryManager.getDialogue();
+                    break;
 
-        //        case "continue":
-        //            currentScene = GameManager.gameManager.gameModel.currentScene;
-        //            if (currentScene != null)
-        //                GameManager.gameManager.gameModel.currentScene = currentScene.CommanderThirdDialog;
-        //            break;
+                case "continue":
+                    GameManager.gameManager.currentDialogueName = "ObjectiveDialogueFour";
+                    GameModel.StoryManager.getDialogue();
+                    break;
 
-        //        case "north":
-        //            currentScene = GameManager.gameManager.gameModel.currentScene;
-        //            if (currentScene != null)
-        //                GameManager.gameManager.gameModel.currentScene = currentScene.CommanderFourthDialog;
-        //            break;
+                case "north":
+                    GameManager.gameManager.currentDialogueName = "ObjectiveDialogueFive";
+                    GameModel.StoryManager.getDialogue();
+                    break;
 
-        //        case "east":
-        //            currentScene = GameManager.gameManager.gameModel.currentScene;
-        //            if (currentScene != null)
-        //                GameManager.gameManager.gameModel.currentScene = currentScene.CommanderFourthDialog;
-        //            break;
+                case "east":
+                    GameManager.gameManager.currentDialogueName = "ObjectiveDialogueFive";
+                    GameModel.StoryManager.getDialogue();
+                    break;
 
-        //        case "west":
-        //            currentScene = GameManager.gameManager.gameModel.currentScene;
-        //            if (currentScene != null)
-        //                GameManager.gameManager.gameModel.currentScene = currentScene.CommanderFourthDialog;
-        //            break;
-        //    }
-        //}
-        //else if (activeScene == "ForestScene")
-        //{
-        //    switch (response)
-        //    {
-        //        case "continue":
-        //            currentScene = GameManager.gameManager.gameModel.currentScene;
-        //            if (currentScene != null)
-        //                GameManager.gameManager.gameModel.currentScene = currentScene.ClueDialog;
-        //            break;
+                case "west":
+                    GameManager.gameManager.currentDialogueName = "ObjectiveDialogueFive";
+                    GameModel.StoryManager.getDialogue();
+                    break;
+            }
+        }
+        else if (activeScene == "ForestScene")
+        {
+            switch (response)
+            {
+                case "continue":
+                    GameManager.gameManager.currentDialogueName = "ForestDialogueTwo";
+                    GameModel.StoryManager.getDialogue();
+                    break;
 
-        //        case "yes":
-        //            currentScene = GameManager.gameManager.gameModel.currentScene;
-        //            if (currentScene != null)
-        //                GameManager.gameManager.gameModel.currentScene = currentScene.ClueDialogTwo;
-        //            break;
+                case "yes":
+                    GameManager.gameManager.currentDialogueName = "ForestDialogueThree";
+                    GameModel.StoryManager.getDialogue();
+                    break;
 
-        //    }
-        //}
-        //else if (activeScene == "CaveEntranceScene")
-        //{
-        //    switch (response)
-        //    {
-        //        case "yes":
-        //            currentScene = GameManager.gameManager.gameModel.currentScene;
-        //            if (currentScene != null)
-        //                GameManager.gameManager.gameModel.currentScene = currentScene.BagExamination;
-        //            break;
+            }
+        }
+        else if (activeScene == "CaveEntranceScene")
+        {
+            switch (response)
+            {
+                case "yes":
+                    GameManager.gameManager.currentDialogueName = "CaveEntranceDialogueTwo";
+                    GameModel.StoryManager.getDialogue();
+                    break;
 
-        //        case "no":
-        //            currentScene = GameManager.gameManager.gameModel.currentScene;
-        //            if (currentScene != null)
-        //                GameManager.gameManager.gameModel.currentScene = currentScene.CaveEntrance;
-        //            break;
+                case "no":
+                    GameManager.gameManager.currentDialogueName = "CaveEntranceDialogueThree";
+                    GameModel.StoryManager.getDialogue();
+                    break;
 
-        //        case "examine":
-        //            currentScene = GameManager.gameManager.gameModel.currentScene;
-        //            if (currentScene != null)
-        //                GameManager.gameManager.gameModel.currentScene = currentScene.CaveEntrance;
-        //            break;
+                case "examine":
+                    GameManager.gameManager.currentDialogueName = "CaveEntranceDialogueFive";
+                    GameModel.StoryManager.getDialogue();
+                    break;
 
-        //        case "sure":
-        //            currentScene = GameManager.gameManager.gameModel.currentScene;
-        //            if (currentScene != null)
-        //                GameManager.gameManager.gameModel.currentScene = currentScene.EnteringCave;
-        //            break;
+                case "sure":
+                    GameManager.gameManager.currentDialogueName = "CaveEntranceDialogueFour";
+                    GameModel.StoryManager.getDialogue();
+                    break;
 
-        //    }
-        //}
+            }
+        }
 
         Debug.Log("Execute " + response);
     }

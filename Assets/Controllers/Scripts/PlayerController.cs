@@ -62,7 +62,6 @@ public class PlayerController : MonoBehaviour
         {
             characterRB.AddForce(new Vector3(-8, 0, 0), ForceMode.VelocityChange);
             characterRB.rotation = Quaternion.LookRotation(Vector3.left);
-
         }
     }
 

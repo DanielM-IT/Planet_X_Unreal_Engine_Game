@@ -5,7 +5,6 @@ public class PlayerManager
 {
     // Start is called before the first frame update
     private DataService Db = new DataService("PlayerData.db");
-    private Player _currentPlayer;
     private int _logInAttempts = 0;
     public bool LoggedIn = false;
 
@@ -14,14 +13,6 @@ public class PlayerManager
         get
         {
             return Db;
-        }
-    }
-
-    public Player CurrentPlayer
-    {
-        get
-        {
-            return _currentPlayer;
         }
     }
 
@@ -48,7 +39,7 @@ public class PlayerManager
             ).ToList<Player>().Count > 0);
     }
 
-    public bool RegisterPlayer(string pUserName, string pPassword)
+    public bool RegisterPlayer(string pUserName, string pPassword, string pCurrentScene)
     {
         bool result = false;
 
@@ -58,6 +49,7 @@ public class PlayerManager
             {
                 PlayerName = pUserName,
                 PlayerPassword = pPassword,
+                CurrentStorySection = pCurrentScene
             };
 
             Db.Connection.Insert(newPlayer);
@@ -79,16 +71,23 @@ public class PlayerManager
         if (!result)
         {
             _logInAttempts++;
-            _currentPlayer = null;
         }
         else
         {
             _logInAttempts = 0;
-            _currentPlayer = lcPlayers.First<Player>();
         }
 
         LoggedIn = result;
 
         return result;
+    }
+
+    public void continueLastScene()
+    {
+        Player currentSection = Db.Connection.Table<Player>().Where(
+                   x => x.PlayerName == GameManager.gameManager.username
+                   ).ToList<Player>().FirstOrDefault<Player>();
+
+        GameManager.gameManager.currentScene = currentSection.CurrentStorySection;
     }
 }

@@ -27,18 +27,22 @@ public class TextInput : MonoBehaviour
             input.onEndEdit = submitEvent;
 
             // Displays the first dialog from the game model on first scene load.
-            //if (GameManager.gameManager.currentActiveScene() == "ObjectivesScene")
-            //{
-            //    output.text = GameManager.gameManager.gameModel.currentScene.story;
-            //}
-            //else if (GameManager.gameManager.currentActiveScene() == "ForestScene")
-            //{
-            //    output.text = GameManager.gameManager.gameModel.currentScene.story;
-            //}
-            //else if (GameManager.gameManager.currentActiveScene() == "CaveEntranceScene")
-            //{
-            //    output.text = GameManager.gameManager.gameModel.currentScene.story;
-            //}
+            if (GameManager.gameManager.currentActiveScene() == "ObjectivesScene")
+            {
+                GameManager.gameManager.currentDialogueName = "ObjectiveDialogueOne";
+                GameModel.StoryManager.getDialogue();
+            }
+            else if (GameManager.gameManager.currentActiveScene() == "ForestScene")
+            {
+                GameManager.gameManager.currentDialogueName = "ForestDialogueOne";
+                GameModel.StoryManager.getDialogue();
+            }
+            else if (GameManager.gameManager.currentActiveScene() == "CaveEntranceScene")
+            {
+                GameManager.gameManager.currentDialogueName = "CaveEntranceDialogueOne";
+                GameModel.StoryManager.getDialogue();
+            }
+            output.text = GameManager.gameManager.currentDialogue;
         }
     }
 

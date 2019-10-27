@@ -11,6 +11,9 @@ public class GameManager : MonoBehaviour
     public static GameModel gameModel;
 
     public string username;
+    public string currentScene;
+    public string currentDialogue;
+    public string currentDialogueName;
     
         /* This method is a one off use for the entire time the instance of this script exists.
     It is used to initialize game states and variables while the game is initializing.

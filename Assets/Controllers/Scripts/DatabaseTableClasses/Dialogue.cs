@@ -1,10 +1,11 @@
 ﻿using SQLite4Unity3d;
 
-public class Dialogue
-{ 
+public class Dialogue 
+{
     [PrimaryKey, AutoIncrement]
-    public int DialogId { get; set; }
+    public int DialogueId { get; set; }
     [NotNull]
-    public string DialogName { get; set; }
-    public string Dialog { get; set; }
+    public string DialogueName { get; set; }
+    public string CurrentDialogue { get; set; }
+    public string SectionName { get; set; }
 }
