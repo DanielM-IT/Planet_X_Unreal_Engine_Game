@@ -31,7 +31,7 @@ public class CommandMap
         {
             command = dictionaryOfCommands[paramInputCommandString];
             command.Execute();
-            //result = GameManager._storyManager.currentScene.story;
+            //result = GameManager.gameManager.gameModel.currentScene.story;
             return true;
         }
         return false;

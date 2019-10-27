@@ -25,8 +25,20 @@ public class TextInput : MonoBehaviour
             submitEvent = new InputField.SubmitEvent();
             submitEvent.AddListener(SubmitInput);
             input.onEndEdit = submitEvent;
-            //output.text = GameManager._gameManager._storyManager.currentScene.story;
-            
+
+            // Displays the first dialog from the game model on first scene load.
+            //if (GameManager.gameManager.currentActiveScene() == "ObjectivesScene")
+            //{
+            //    output.text = GameManager.gameManager.gameModel.currentScene.story;
+            //}
+            //else if (GameManager.gameManager.currentActiveScene() == "ForestScene")
+            //{
+            //    output.text = GameManager.gameManager.gameModel.currentScene.story;
+            //}
+            //else if (GameManager.gameManager.currentActiveScene() == "CaveEntranceScene")
+            //{
+            //    output.text = GameManager.gameManager.gameModel.currentScene.story;
+            //}
         }
     }
 
@@ -42,7 +54,6 @@ public class TextInput : MonoBehaviour
         // Clears all text from the input field
         input.text = null;
 
-        // Will activate or deactivate specific UI elements if certain keywords are inputted.
         if (submittedInput.Equals("west") || submittedInput.Equals("east") || submittedInput.Equals("north"))
         {
             displayElement.gameObject.SetActive(true);

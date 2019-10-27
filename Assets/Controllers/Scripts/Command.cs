@@ -5,7 +5,13 @@ public class Command : MonoBehaviour
 {
     //public static Command commands;
     private string response;
+    public Button enterForestButton;
 
+    private void Start()
+    {
+        // Future implementation
+        //enterForestButton.gameObject.SetActive(false);
+    }
 
     public Command(string paramResponse)
     {
@@ -15,48 +21,48 @@ public class Command : MonoBehaviour
 
     public void Execute()
     {
-        //// Runs the user command and will decide on th ethe response according to both the current Unity scene and the key word used.
-        //Scene currentScene = GameManager._storyManager.currentScene;
-        //string activeScene = GameManager._gameManager.currentActiveScene();
+        // Runs the user command and will decide on th ethe response according to both the current Unity scene and the key word used.
+        //Scene currentScene = GameManager.gameManager.gameModel.currentScene;
+        //string activeScene = GameManager.gameManager.currentActiveScene();
 
         //if (activeScene == "ObjectivesScene")
         //{
         //    switch (response)
         //    {
         //        case "next":
-        //            currentScene = GameManager._storyManager.currentScene;
+        //            currentScene = GameManager.gameManager.gameModel.currentScene;
         //            if (currentScene != null)
-        //                GameManager._storyManager.currentScene = currentScene.CommanderFirstDialog;
+        //                GameManager.gameManager.gameModel.currentScene = currentScene.CommanderFirstDialog;
         //            break;
 
         //        case "yes":
-        //            currentScene = GameManager._storyManager.currentScene;
+        //            currentScene = GameManager.gameManager.gameModel.currentScene;
         //            if (currentScene != null)
-        //                GameManager._storyManager.currentScene = currentScene.CommanderSecondDialog;
+        //                GameManager.gameManager.gameModel.currentScene = currentScene.CommanderSecondDialog;
         //            break;
 
         //        case "continue":
-        //            currentScene = GameManager._storyManager.currentScene;
+        //            currentScene = GameManager.gameManager.gameModel.currentScene;
         //            if (currentScene != null)
-        //                GameManager._storyManager.currentScene = currentScene.CommanderThirdDialog;
+        //                GameManager.gameManager.gameModel.currentScene = currentScene.CommanderThirdDialog;
         //            break;
 
         //        case "north":
-        //            currentScene = GameManager._storyManager.currentScene;
+        //            currentScene = GameManager.gameManager.gameModel.currentScene;
         //            if (currentScene != null)
-        //                GameManager._storyManager.currentScene = currentScene.CommanderFourthDialog;
+        //                GameManager.gameManager.gameModel.currentScene = currentScene.CommanderFourthDialog;
         //            break;
 
         //        case "east":
-        //            currentScene = GameManager._storyManager.currentScene;
+        //            currentScene = GameManager.gameManager.gameModel.currentScene;
         //            if (currentScene != null)
-        //                GameManager._storyManager.currentScene = currentScene.CommanderFourthDialog;
+        //                GameManager.gameManager.gameModel.currentScene = currentScene.CommanderFourthDialog;
         //            break;
 
         //        case "west":
-        //            currentScene = GameManager._storyManager.currentScene;
+        //            currentScene = GameManager.gameManager.gameModel.currentScene;
         //            if (currentScene != null)
-        //                GameManager._storyManager.currentScene = currentScene.CommanderFourthDialog;
+        //                GameManager.gameManager.gameModel.currentScene = currentScene.CommanderFourthDialog;
         //            break;
         //    }
         //}
@@ -65,45 +71,45 @@ public class Command : MonoBehaviour
         //    switch (response)
         //    {
         //        case "continue":
-        //            currentScene = GameManager._storyManager.currentScene;
+        //            currentScene = GameManager.gameManager.gameModel.currentScene;
         //            if (currentScene != null)
-        //                GameManager._storyManager.currentScene = currentScene.ClueDialog;
+        //                GameManager.gameManager.gameModel.currentScene = currentScene.ClueDialog;
         //            break;
 
         //        case "yes":
-        //            currentScene = GameManager._storyManager.currentScene;
+        //            currentScene = GameManager.gameManager.gameModel.currentScene;
         //            if (currentScene != null)
-        //                GameManager._storyManager.currentScene = currentScene.ClueDialogTwo;
+        //                GameManager.gameManager.gameModel.currentScene = currentScene.ClueDialogTwo;
         //            break;
+
         //    }
         //}
-        
         //else if (activeScene == "CaveEntranceScene")
         //{
         //    switch (response)
         //    {
         //        case "yes":
-        //            currentScene = GameManager._storyManager.currentScene;
+        //            currentScene = GameManager.gameManager.gameModel.currentScene;
         //            if (currentScene != null)
-        //                GameManager._storyManager.currentScene = currentScene.BagExamination;
+        //                GameManager.gameManager.gameModel.currentScene = currentScene.BagExamination;
         //            break;
 
         //        case "no":
-        //            currentScene = GameManager._storyManager.currentScene;
+        //            currentScene = GameManager.gameManager.gameModel.currentScene;
         //            if (currentScene != null)
-        //                GameManager._storyManager.currentScene = currentScene.CaveEntrance;
+        //                GameManager.gameManager.gameModel.currentScene = currentScene.CaveEntrance;
         //            break;
 
         //        case "examine":
-        //            currentScene = GameManager._storyManager.currentScene;
+        //            currentScene = GameManager.gameManager.gameModel.currentScene;
         //            if (currentScene != null)
-        //                GameManager._storyManager.currentScene = currentScene.CaveEntrance;
+        //                GameManager.gameManager.gameModel.currentScene = currentScene.CaveEntrance;
         //            break;
 
         //        case "sure":
-        //            currentScene = GameManager._storyManager.currentScene;
+        //            currentScene = GameManager.gameManager.gameModel.currentScene;
         //            if (currentScene != null)
-        //                GameManager._storyManager.currentScene = currentScene.EnteringCave;
+        //                GameManager.gameManager.gameModel.currentScene = currentScene.EnteringCave;
         //            break;
 
         //    }
