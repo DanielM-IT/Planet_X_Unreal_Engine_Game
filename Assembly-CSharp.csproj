@@ -62,24 +62,28 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Controllers\Scripts\Command.cs" />
-    <Compile Include="Assets\Controllers\Scripts\CommandMap.cs" />
-    <Compile Include="Assets\Controllers\Scripts\CommandProcessor.cs" />
-    <Compile Include="Assets\Controllers\Scripts\DatabaseTableClasses\Dialogue.cs" />
-    <Compile Include="Assets\Controllers\Scripts\DatabaseTableClasses\Player.cs" />
-    <Compile Include="Assets\Controllers\Scripts\DatabaseTableClasses\StorySection.cs" />
-    <Compile Include="Assets\Controllers\Scripts\GameManager.cs" />
-    <Compile Include="Assets\Controllers\Scripts\GameModel.cs" />
-    <Compile Include="Assets\Controllers\Scripts\LoginManager.cs" />
-    <Compile Include="Assets\Controllers\Scripts\PlayerController.cs" />
-    <Compile Include="Assets\Controllers\Scripts\PlayerManager.cs" />
-    <Compile Include="Assets\Controllers\Scripts\Scene.cs" />
-    <Compile Include="Assets\Controllers\Scripts\SceneController.cs" />
-    <Compile Include="Assets\Controllers\Scripts\SQLite\DataService.cs" />
-    <Compile Include="Assets\Controllers\Scripts\SQLite\SQLite.cs" />
-    <Compile Include="Assets\Controllers\Scripts\StoryManager.cs" />
-    <Compile Include="Assets\Controllers\Scripts\TextInput.cs" />
-    <Compile Include="Assets\Controllers\Scripts\UIController.cs" />
+    <Compile Include="Assets\Scripts\Command.cs" />
+    <Compile Include="Assets\Scripts\CommandMap.cs" />
+    <Compile Include="Assets\Scripts\CommandProcessor.cs" />
+    <Compile Include="Assets\Scripts\DatabaseTableClasses\Dialogue.cs" />
+    <Compile Include="Assets\Scripts\DatabaseTableClasses\Player.cs" />
+    <Compile Include="Assets\Scripts\DatabaseTableClasses\StorySection.cs" />
+    <Compile Include="Assets\Scripts\ExitGameController.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\GameModel.cs" />
+    <Compile Include="Assets\Scripts\InventoryController.cs" />
+    <Compile Include="Assets\Scripts\LoginManager.cs" />
+    <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\PlayerManager.cs" />
+    <Compile Include="Assets\Scripts\Scene.cs" />
+    <Compile Include="Assets\Scripts\SceneController.cs" />
+    <Compile Include="Assets\Scripts\ScoreController.cs" />
+    <Compile Include="Assets\Scripts\SettingsController.cs" />
+    <Compile Include="Assets\Scripts\SQLite\DataService.cs" />
+    <Compile Include="Assets\Scripts\SQLite\SQLite.cs" />
+    <Compile Include="Assets\Scripts\StoryManager.cs" />
+    <Compile Include="Assets\Scripts\TextInput.cs" />
+    <Compile Include="Assets\Scripts\UIController.cs" />
     <None Include="Assets\GameAssets\Characters\Zombie\TSF\Shaders\TSFOutline.shader" />
     <None Include="Assets\GameAssets\Characters\Zombie\TSF\Shaders\TSF.shader" />
     <Reference Include="Unity.Timeline.Editor">
