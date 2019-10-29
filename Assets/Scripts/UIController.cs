@@ -22,18 +22,31 @@ public class UIController : MonoBehaviour
     {
         counter++;
 
-        if (inputField.activeSelf == true && outputField.activeSelf == true)
+        if (counter % 2 == 1)
         {
-            if (counter % 2 == 1)
+            if (inputField.activeSelf == true && outputField.activeSelf == true)
             {
                 inputField.gameObject.SetActive(false);
-                outputField.gameObject.SetActive(false);
+                    outputField.gameObject.SetActive(false);
+            }
+            else if (inputField.activeSelf == false && outputField.activeSelf == false)
+            {
+                inputField.gameObject.SetActive(true);
+                outputField.gameObject.SetActive(true);
             }
         }
         else
         {
-            inputField.gameObject.SetActive(true);
-            outputField.gameObject.SetActive(true);
+            if (inputField.activeSelf == false && outputField.activeSelf == false)
+            {
+                inputField.gameObject.SetActive(true);
+                outputField.gameObject.SetActive(true);
+            }
+            else if (inputField.activeSelf == true && outputField.activeSelf == true)
+            {
+                inputField.gameObject.SetActive(false);
+                outputField.gameObject.SetActive(false);
+            }
         }
     }
 

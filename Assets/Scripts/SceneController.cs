@@ -18,6 +18,7 @@ public class SceneController : MonoBehaviour
     // Used to load a new scene. The intention for this methos is to be attached to a button.
     public void buttonChangeOfScene()
     {
+        updatePlayerCurrentStorySection();
         GameModel.PlayerManager.updatePlayerXpPoints();
         SceneManager.LoadScene(sceneName);
     }
@@ -30,7 +31,12 @@ public class SceneController : MonoBehaviour
 
     public void updatePlayerCurrentStorySection()
     {
-        if (GameManager.gameManager.currentActiveScene() == "ObjectivesScene")
+        if (GameManager.gameManager.currentActiveScene() == "GameMenu")
+        {
+            GameManager.gameManager.currentScene = "ObjectivesScene";
+            GameModel.PlayerManager.updatePlayerCurrentScene();
+        }
+        else if (GameManager.gameManager.currentActiveScene() == "ObjectivesScene")
         {
             GameModel.PlayerManager.updatePlayerXpPoints();
             GameManager.gameManager.currentScene = "ForestScene";

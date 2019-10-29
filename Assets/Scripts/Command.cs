@@ -61,7 +61,7 @@ public class Command : MonoBehaviour
                     GameModel.StoryManager.getDialogue();
                     break;
 
-                case "yes":
+                case "definitely":
                     GameManager.gameManager.currentDialogueName = "ForestDialogueThree";
                     GameModel.StoryManager.getDialogue();
                     break;

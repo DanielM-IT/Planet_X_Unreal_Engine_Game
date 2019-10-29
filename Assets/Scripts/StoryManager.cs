@@ -47,7 +47,7 @@ public class StoryManager
         {
             SectionName = theStorySection.SectionName,
             DialogueName = "ObjectiveDialogueOne",
-            CurrentDialogue = "As earth’s population grows too large for the planet to sustain, man began exploring the wider universe looking for new planets to inhabit." + "\n" + "\n" +
+            CurrentDialogue = "\n" + "As earth’s population grows too large for the planet to sustain, man began exploring the wider universe looking for new planets to inhabit." + "\n" + "\n" +
             "In a remote region a colonist ship arrives in an uncharted system. Being critically damaged by a close encounter with an asteroid field the crew were forced to immediately make landfall." + "\n" + "\n" +
             "It did not take long for the crew to discover that the communication equipment did not work and the ship too severely damaged to lift off again.With options limited the ships occupants began construction of a new settlement and set out to explore their new home." +
             "\n" + "\n" + "They soon realised they were not alone…" + "\n" + "\n" + "(next) to continue"
@@ -121,7 +121,7 @@ public class StoryManager
         {
             SectionName = theStorySection.SectionName,
             DialogueName = "ForestDialogueTwo",
-            CurrentDialogue = "Follow them?" + "\n" + "\n" + "(yes)"
+            CurrentDialogue = "Follow them?" + "\n" + "\n" + "(definitely)"
         };
         Db.Connection.Insert(lcForestDialogueTwo);
 

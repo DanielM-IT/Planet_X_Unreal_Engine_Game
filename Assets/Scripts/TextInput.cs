@@ -63,6 +63,10 @@ public class TextInput : MonoBehaviour
             displayElement.gameObject.SetActive(true);
             inputField.gameObject.SetActive(false);
         }
+        else if (submittedInput.Equals("definitely") || submittedInput.Equals("sure"))
+        {
+            inputField.gameObject.SetActive(false);
+        }
 
     }
 

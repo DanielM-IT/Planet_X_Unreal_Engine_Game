@@ -20,6 +20,7 @@ public class CommandMap
         dictionaryOfCommands.Add("north", new Command("north"));
         dictionaryOfCommands.Add("east", new Command("east"));
         dictionaryOfCommands.Add("west", new Command("west"));
+        dictionaryOfCommands.Add("definitely", new Command("definitely"));
     }
 
     // Checks to see if the user input is in the dictionary of recognised key words. If it is it will run the command through the command class.

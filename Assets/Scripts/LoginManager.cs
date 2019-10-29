@@ -27,10 +27,6 @@ public class LoginManager : MonoBehaviour
                 GameManager.gameManager.username = UserName.text;
                 SceneManager.LoadScene("GameMenu");
             }
-            else if (GameModel.PlayerManager.PlayerExists(pUserName))
-            {
-                PromptText.text = "Password is incorrect.";
-            }
             else
             {
                 PromptText.text = "Username or password is incorrect.";
@@ -40,7 +36,7 @@ public class LoginManager : MonoBehaviour
 
     public void registrationHandler()
     {
-        registrationHandler(UserName.text, Password.text, "ObjectivesScene");
+        registrationHandler(UserName.text, Password.text, "GameMenu");
     }
 
     public void registrationHandler(string pUserName, string pPassword, string pCurrentScene)
