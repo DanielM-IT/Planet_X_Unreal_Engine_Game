@@ -3,13 +3,14 @@
 public class CharacterController : MonoBehaviour
 {
     // Gets the animator and rigidbody game objects and creates a variable for each to store each user command in so it can be sent to and used by the came object.
-    Animator survivalCharacter;
+    //Animator survivalCharacter;
+    public GameObject theCharacter;
     Rigidbody characterRB;
     public ConstantForce gravity;
 
     void Start()
     {
-        survivalCharacter = GetComponent<Animator>();
+        //survivalCharacter = GetComponent<Animator>();
         characterRB = GetComponent<Rigidbody>();
         gravity = gameObject.AddComponent<ConstantForce>();
         gravity.force = new Vector3(0.0f, -9.81f, 0.0f);
@@ -18,20 +19,31 @@ public class CharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Walk character animation
-        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetButtonDown("UpKey") || Input.GetButtonDown("LeftKey") || Input.GetButtonDown("DownKey") || Input.GetButtonDown("RightKey"))
         {
-            // Animate walk
-            survivalCharacter.SetBool("Walk", true);
-            survivalCharacter.SetBool("Stop", false);
+            theCharacter.GetComponent<Animator>().Play("Run");
+        }
+        else if (Input.GetButtonUp("UpKey") || Input.GetButtonUp("LeftKey") || Input.GetButtonUp("DownKey") || Input.GetButtonUp("RightKey"))
+        {
+            theCharacter.GetComponent<Animator>().Play("Idle");
         }
 
-        // Stop character animation
-        if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.RightArrow))
-        {
-            survivalCharacter.SetBool("Stop", true);
-            survivalCharacter.SetBool("Walk", false);
-        }
+
+
+        //    // Walk character animation
+        //    if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.RightArrow))
+        //    {
+        //        // Animate walk
+        //        survivalCharacter.SetBool("Walk", true);
+        //        survivalCharacter.SetBool("Stop", false);
+        //    }
+
+        //    // Stop character animation
+        //    if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.RightArrow))
+        //    {
+        //        survivalCharacter.SetBool("Stop", true);
+        //        survivalCharacter.SetBool("Walk", false);
+        //    }
     }
 
 

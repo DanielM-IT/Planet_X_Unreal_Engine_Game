@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Linq;
 
 
 public class SceneController : MonoBehaviour
@@ -15,7 +14,7 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
-    // Used to load a new scene. The intention for this methos is to be attached to a button.
+    // Used to load a new scene. The intention for this method is to be attached to a button.
     public void buttonChangeOfScene()
     {
         updatePlayerCurrentStorySection();
@@ -23,12 +22,14 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
+    // Used to continue the last active scene. The intention for this method is to be attached to a continue button.
     public void buttonContinueLastScene()
     {
         GameModel.PlayerManager.continueLastScene();
         SceneManager.LoadScene(GameManager.gameManager.currentScene);
     }
 
+    // Upon switching to a new scene this method is used by the database methods to update a players current scene.
     public void updatePlayerCurrentStorySection()
     {
         if (GameManager.gameManager.currentActiveScene() == "GameMenu")

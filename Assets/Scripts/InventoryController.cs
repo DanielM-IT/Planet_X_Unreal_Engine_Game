@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+// Will have more functionality as I develop my inventory system. For now I can show and hide it in the UI using a counter algorithm.
 public class InventoryController : MonoBehaviour
 {
     public GameObject Inventory;

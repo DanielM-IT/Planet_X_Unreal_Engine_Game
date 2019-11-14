@@ -1,4 +1,4 @@
-﻿
+﻿// This simply declares a new static instance of each of my SQLite domain classes and then instantiates each of them.
 public class GameModel
 { 
     private static PlayerManager _playerManager;

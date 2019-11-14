@@ -2,7 +2,7 @@
 
 public class UIController : MonoBehaviour
 {
-    // Creates a public instance of these objects visible on Unity. The desired object is then drop into each slot.
+    // Creates a public instance of these objects visible on Unity. The desired object is then dropped into each slot.
     public GameObject inputField;
     public GameObject outputField;
     public GameObject hintText;

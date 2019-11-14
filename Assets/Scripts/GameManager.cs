@@ -16,9 +16,8 @@ public class GameManager : MonoBehaviour
     public string currentDialogue;
     public string currentDialogueName;
     
-        /* This method is a one off use for the entire time the instance of this script exists.
-    It is used to initialize game states and variables while the game is initializing.
-    */
+    // This method is a one off use for the entire time the instance of this script exists.
+    // It is used to initialize game states and variables while the game is initializing.
     private void Awake()
     {
         if (gameManager == null)

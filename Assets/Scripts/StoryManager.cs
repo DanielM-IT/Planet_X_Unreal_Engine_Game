@@ -1,9 +1,9 @@
 ﻿using System.Linq;
-using System.Collections.Generic;
 
 
 public class StoryManager 
 {
+    // Instantiates a new database for my game data. Will only do so if it does not already exist.
     private DataService Db = new DataService("PlanetXData.db");
 
 
@@ -15,6 +15,7 @@ public class StoryManager
         }
     }
 
+    // Create the following new database tables.
 
     public StoryManager()
     {
@@ -24,13 +25,14 @@ public class StoryManager
             typeof(Dialogue)
         });
 
-
+        // This is creating the three sory sections thhat will be used in the game and specifying which will be their first dialogue.
         CreateObjectiveStorySection("ObjectivesScene", "ObjectiveDialogueOne");
         CreateForestStorySection("ForestScene", "ForestDialogueOne");
         CreateCaveEntranceStorySection("CaveEntranceScene", "CaveEntranceDialogueOne");
     }
 
-
+    // These next three methods do the same thing. They first insert one of the story sections from above into the database using the given paramaters. 
+    // They then create and insert the required number of dialogues for each story section.
     public void CreateObjectiveStorySection(string pSectionName, string pFirstDialogueName)
     {
         DB.InsertIfDoesNotExist<StorySection>(new StorySection
@@ -193,6 +195,7 @@ public class StoryManager
         Db.Connection.Insert(lcCaveEntranceDialogueFive);
     }
 
+    // This method is used to retrieve the current dialogue.
     public void getDialogue()
     {
         Dialogue dialogue = Db.Connection.Table<Dialogue>().Where(
@@ -202,6 +205,7 @@ public class StoryManager
         GameManager.gameManager.currentDialogue = dialogue.CurrentDialogue;
     }
 
+    // This method is used to retrieve the current story section from the database.
     public void getNewStorySection()
     {
         StorySection currentStorySection = Db.Connection.Table<StorySection>().Where(

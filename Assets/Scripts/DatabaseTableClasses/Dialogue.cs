@@ -1,5 +1,6 @@
 ﻿using SQLite4Unity3d;
 
+// Properties used to access the data in the Dialogue SQLite table
 public class Dialogue 
 {
     [PrimaryKey, AutoIncrement]

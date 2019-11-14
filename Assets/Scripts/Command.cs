@@ -2,9 +2,7 @@
 
 public class Command : MonoBehaviour
 {
-    //public static Command commands;
     private string response;
-
 
     public Command(string paramResponse)
     {
@@ -14,7 +12,8 @@ public class Command : MonoBehaviour
 
     public void Execute()
     {
-       // Runs the user command and will decide on th ethe response according to both the current Unity scene and the key word used.
+       // Runs the user command and will decide on the response according to both the current Unity scene and the key word used. 
+       // It then sets the dialogue name in the public variable currentDialogueName and uses a method to retrive the asociated dialogue from teh database to display.
         string activeScene = GameManager.gameManager.currentActiveScene();
 
         if (activeScene == "ObjectivesScene")

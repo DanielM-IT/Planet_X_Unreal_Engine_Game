@@ -1,7 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
+// This class is used to control my settings window. At the moment it only serves to allow a player to exit their current game. 
+// Later on this class will allow me to add additional settings into the game. For instance the ability to control sound levels.
 public class SettingsController : MonoBehaviour
 {
     public GameObject Settings;

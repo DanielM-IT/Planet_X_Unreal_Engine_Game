@@ -26,7 +26,7 @@ public class TextInput : MonoBehaviour
             submitEvent.AddListener(SubmitInput);
             input.onEndEdit = submitEvent;
 
-            // Displays the first dialog from the game model on first scene load.
+            // Displays the first dialog from the current story scene section..
             if (GameManager.gameManager.currentActiveScene() == "ObjectivesScene")
             {
                 GameManager.gameManager.currentDialogueName = "ObjectiveDialogueOne";
@@ -58,6 +58,7 @@ public class TextInput : MonoBehaviour
         // Clears all text from the input field
         input.text = null;
 
+        // This conditional statement allows my to disable the text input when the current story dialogue set is over.
         if (submittedInput.Equals("west") || submittedInput.Equals("east") || submittedInput.Equals("north"))
         {
             displayElement.gameObject.SetActive(true);
