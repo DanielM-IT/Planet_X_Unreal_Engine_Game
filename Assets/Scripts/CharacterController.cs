@@ -27,23 +27,6 @@ public class CharacterController : MonoBehaviour
         {
             theCharacter.GetComponent<Animator>().Play("Idle");
         }
-
-
-
-        //    // Walk character animation
-        //    if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.RightArrow))
-        //    {
-        //        // Animate walk
-        //        survivalCharacter.SetBool("Walk", true);
-        //        survivalCharacter.SetBool("Stop", false);
-        //    }
-
-        //    // Stop character animation
-        //    if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.RightArrow))
-        //    {
-        //        survivalCharacter.SetBool("Stop", true);
-        //        survivalCharacter.SetBool("Walk", false);
-        //    }
     }
 
 
