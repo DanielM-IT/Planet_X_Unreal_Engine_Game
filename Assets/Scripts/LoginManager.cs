@@ -41,12 +41,12 @@ public class LoginManager : MonoBehaviour
     // the new players current scene to the first scene.
     public void registrationHandler()
     {
-        registrationHandler(UserName.text, Password.text, "GameMenu");
+        registrationHandler(UserName.text, Password.text, "GameMenu", 0);
     }
 
     // Takes the three paramaters after first checking that the two text fields had text in them and passes the paramaters to the registerplayer method. 
     // If it comes back as successful it will display a success message, if unsuccessful a username already exists message.
-    public void registrationHandler(string pUserName, string pPassword, string pCurrentScene)
+    public void registrationHandler(string pUserName, string pPassword, string pCurrentScene, int pPlayerXP)
     {
         if (string.IsNullOrWhiteSpace(UserName.text) || string.IsNullOrWhiteSpace(Password.text))
         {
@@ -54,7 +54,7 @@ public class LoginManager : MonoBehaviour
         }
         else
         {
-            if (GameModel.PlayerManager.RegisterPlayer(pUserName, pPassword, pCurrentScene))
+            if (GameModel.PlayerManager.RegisterPlayer(pUserName, pPassword, pCurrentScene, pPlayerXP))
             {
                 PromptText.text = "New log in successfully created.";
             }

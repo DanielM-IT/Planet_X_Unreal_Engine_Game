@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{1EEF9BF7-6CAC-B461-CF81-38F04819A5CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{BA0F0B81-0042-ABF8-1492-C1EED08F05B4}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,10 +13,6 @@ Global
 		{1EEF9BF7-6CAC-B461-CF81-38F04819A5CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1EEF9BF7-6CAC-B461-CF81-38F04819A5CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1EEF9BF7-6CAC-B461-CF81-38F04819A5CC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BA0F0B81-0042-ABF8-1492-C1EED08F05B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BA0F0B81-0042-ABF8-1492-C1EED08F05B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BA0F0B81-0042-ABF8-1492-C1EED08F05B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BA0F0B81-0042-ABF8-1492-C1EED08F05B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

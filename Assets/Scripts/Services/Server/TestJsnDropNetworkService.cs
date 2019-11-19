@@ -10,10 +10,10 @@ public class TestJsnDropNetworkService : MonoBehaviour
         // To do: parse and produce an appropriate response
     }
 
-    public void jsnListReceiverDel(List<Person> pReceivedList)
+    public void jsnListReceiverDel(List<Player> pReceivedList)
     {
         Debug.Log("Received items " + pReceivedList.Count());
-        foreach (Person lcReceived in pReceivedList)
+        foreach (Player lcReceived in pReceivedList)
         {
             Debug.Log("Received {" + lcReceived.PlayerName + "," + lcReceived.PlayerPassword + "," + lcReceived.PlayerXP.ToString()+"}");
         }// for
@@ -27,7 +27,7 @@ public class TestJsnDropNetworkService : MonoBehaviour
         JSONDropService jsDrop = new JSONDropService { Token = "81692e31-9d31-48b9-9f01-7bfc20983283" };
         
         // Create table player
-        jsDrop.Create<Person, JsnReceiver>(new Person
+        jsDrop.Create<Player, JsnReceiver>(new Player
         {
             PlayerName = "UUUUUUUUUUUUUUUUUUUUUUUUUUU",
             PlayerXP = 0,
@@ -35,19 +35,19 @@ public class TestJsnDropNetworkService : MonoBehaviour
         }, jsnReceiverDel);
 
         // Store player records
-        jsDrop.Store<Person, JsnReceiver> (new List<Person>
+        jsDrop.Store<Player, JsnReceiver> (new List<Player>
         {
-            new Person{PlayerName = "Jack",PlayerXP = 100,PlayerPassword ="test"},
-            new Person{PlayerName = "Jonny",PlayerXP = 200,PlayerPassword ="test1"},
-            new Person{PlayerName = "Jill",PlayerXP = 300,PlayerPassword ="test2"}
+            new Player{PlayerName = "Jack",PlayerXP = 100,PlayerPassword ="test"},
+            new Player{PlayerName = "Jonny",PlayerXP = 200,PlayerPassword ="test1"},
+            new Player{PlayerName = "Jill",PlayerXP = 300,PlayerPassword ="test2"}
          }, jsnReceiverDel);
         
         // Retreive all player records
-        jsDrop.All<Person, JsnReceiver>(jsnListReceiverDel, jsnReceiverDel);
+        jsDrop.All<Player, JsnReceiver>(jsnListReceiverDel, jsnReceiverDel);
         
-        jsDrop.Select<Person, JsnReceiver>("PlayerXP > 200", jsnListReceiverDel, jsnReceiverDel);
+        jsDrop.Select<Player, JsnReceiver>("PlayerXP > 200", jsnListReceiverDel, jsnReceiverDel);
         
-        jsDrop.Delete<Person, JsnReceiver>("PlayerName = 'Calida'", jsnReceiverDel);
+        jsDrop.Delete<Player, JsnReceiver>("PlayerName = 'Calida'", jsnReceiverDel);
         
         //jsDrop.Drop<Person, JsnReceiver>(jsnReceiverDel);
         #endregion

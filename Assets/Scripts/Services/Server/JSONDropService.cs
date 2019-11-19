@@ -85,7 +85,7 @@ public class JSONDropService
                     {
                         if (currentName == "\"" + pPKName)
                         {
-                            currentJsn += currentName + " PK" + currentChar;
+                            currentJsn += currentName + " PK AUTO" + currentChar;
                         }
                         else
                             currentJsn += currentName + currentChar;
@@ -109,7 +109,7 @@ public class JSONDropService
             bool isAuto = false;
             string tblName = typeof(T).ToString();
             var tblType = typeof(T);
-            TableMapping map = AkeakeState.DB.Connection.GetMapping(tblType);
+            TableMapping map = GameModel.PlayerManager.DB.Connection.GetMapping(tblType);
             var PrimaryKeys = map.Columns.Where<TableMapping.Column>(
                 x =>
                 {
