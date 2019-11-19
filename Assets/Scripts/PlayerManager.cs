@@ -11,6 +11,7 @@ public class PlayerManager
     private DataService Db = new DataService("PlayerData.db");
     private int _logInAttempts = 0;
     public bool LoggedIn = false;
+    private int playerCount = 0;
 
     public DataService DB
     {
@@ -38,20 +39,29 @@ public class PlayerManager
     }
 
     // Checks if a player exists in the database. If 1 is returned they do, if 0 then they do not.
-    public bool PlayerExists(string pUserName)
+    public void PlayerExists(string pUserName)
     {
-        jsDrop.Select<Player, JsnReceiver>("PlayerName = '" + pUserName + "'", jsnListReceiverDel, jsnReceiverDel);
-  
-
-
-        return (Db.Connection.Table<Player>().Where<Player>(
-            x => x.PlayerName == pUserName
-            ).ToList<Player>().Count > 0);
+        jsDrop.Select<Player, JsnReceiver>("PlayerName = '" + pUserName + "'", jsnPlayerExistsReceiverDel, jsnPlayerExistsReceiverDelFail);
     }
+
+    public void jsnPlayerExistsReceiverDel(List<Player> pReceivedList)
+    {
+        playerCount = pReceivedList.Count();
+    }
+
+    public void jsnPlayerExistsReceiverDelFail(JsnReceiver pReceived)
+    {
+        Debug.Log(pReceived.JsnMsg + " ..." + pReceived.Msg);
+        // To do: parse and produce an appropriate response
+    }
+
+
+
 
     // This first uses the player exists method to check for this. If they do not then a new player record is created in the player table.
     public void RegisterPlayer(string pUserName, string pPassword, string pCurrentScene, int pPlayerXP)
     {
+        PlayerExists(pUserName);
         //bool result = false;
 
         //if (!PlayerExists(pUserName))
@@ -70,16 +80,6 @@ public class PlayerManager
         //return result;
     }
 
-    public void jsnPlayerExistsReceiverDel(List<Player> pReceivedList)
-    {
-        Debug.Log("Received items " + pReceivedList.Count());
-        foreach (Player lcReceived in pReceivedList)
-        {
-            Debug.Log("Received {" + lcReceived.PlayerName + "," + lcReceived.PlayerPassword + "," + lcReceived.PlayerXP.ToString() + "}");
-        }// for
-
-        // To do: produce an appropriate response
-    }
 
     public void jsnRegisterReceiverDel(JsnReceiver pReceived)
     {
@@ -116,6 +116,26 @@ public class PlayerManager
         //return result;
     }
 
+
+    public void jsnLoginReceiverDel(List<Player> pReceivedList)
+    {
+        Debug.Log("Received items " + pReceivedList.Count());
+        foreach (Player lcReceived in pReceivedList)
+        {
+            Debug.Log("Received {" + lcReceived.PlayerName + "," + lcReceived.PlayerPassword + "," + lcReceived.PlayerXP.ToString() + "}");
+        }// for
+
+        // To do: produce an appropriate response
+    }
+
+
+    public void jsnReceiverDelLoginFail(JsnReceiver pReceived)
+    {
+        Debug.Log(pReceived.JsnMsg + " ..." + pReceived.Msg);
+        // To do: parse and produce an appropriate response
+    }
+
+
     // This method retrieves the players current scene from their last playing session.
     public void continueLastScene()
     {
@@ -147,6 +167,12 @@ public class PlayerManager
     {
         Db.Connection.Execute("UPDATE Player SET PlayerXP = ? Where PlayerName = ?", GameManager.gameManager.currentXpPoints, GameManager.gameManager.username);
     }
+
+
+
+
+
+
 
     public void jsnReceiverDel(JsnReceiver pReceived)
     {
